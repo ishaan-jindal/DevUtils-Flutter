@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'json_formatter_bloc.dart';
 
 /// State for the JSON Formatter BLoC.
 class JsonFormatterState extends Equatable {

@@ -4,8 +4,6 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../core/constants/app_constants.dart';
 import '../../../di/injection.dart';
 import '../bloc/json_formatter_bloc.dart';
-import '../bloc/json_formatter_event.dart';
-import '../bloc/json_formatter_state.dart';
 import '../widgets/json_input_area.dart';
 import '../widgets/json_output_area.dart';
 import '../widgets/json_toolbar.dart';

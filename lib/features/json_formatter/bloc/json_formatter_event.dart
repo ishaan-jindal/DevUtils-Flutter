@@ -1,4 +1,4 @@
-import 'package:equatable/equatable.dart';
+part of 'json_formatter_bloc.dart';
 
 /// Events for the JSON Formatter BLoC.
 abstract class JsonFormatterEvent extends Equatable {

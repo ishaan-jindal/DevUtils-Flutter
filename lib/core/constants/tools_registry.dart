@@ -19,6 +19,16 @@ class ToolsRegistry {
       isNew: true,
     ),
     ToolModel(
+      id: 'timestamp_converter',
+      name: 'Timestamp Converter',
+      description: 'Unix ↔ human readable time',
+      icon: Icons.access_time_rounded,
+      accentColor: AppColors.timestampConverter,
+      routePath: '/timestamp-converter',
+      category: ToolCategory.converters,
+      isNew: true,
+    ),
+    ToolModel(
       id: 'jwt_decoder',
       name: 'JWT Decoder',
       description: 'Decode payload & check expiry',
@@ -36,16 +46,6 @@ class ToolsRegistry {
       accentColor: AppColors.regexTester,
       routePath: '/regex-tester',
       category: ToolCategory.testers,
-      isComingSoon: true,
-    ),
-    ToolModel(
-      id: 'timestamp_converter',
-      name: 'Timestamp Converter',
-      description: 'Unix ↔ human readable time',
-      icon: Icons.access_time_rounded,
-      accentColor: AppColors.timestampConverter,
-      routePath: '/timestamp-converter',
-      category: ToolCategory.converters,
       isComingSoon: true,
     ),
     ToolModel(

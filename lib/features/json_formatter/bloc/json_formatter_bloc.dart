@@ -1,9 +1,10 @@
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
+import 'package:equatable/equatable.dart';
 
 import '../services/json_formatter_service.dart';
-import 'json_formatter_event.dart';
-import 'json_formatter_state.dart';
+part 'json_formatter_event.dart';
+part 'json_formatter_state.dart';
 
 /// BLoC for JSON Formatter feature.
 @injectable
