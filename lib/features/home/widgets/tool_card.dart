@@ -4,7 +4,7 @@ import '../../../core/constants/app_constants.dart';
 import '../../../core/models/tool_model.dart';
 import '../../../core/widgets/animated_fade_in.dart';
 
-/// A beautifully styled card representing a single developer tool.
+/// A styled card representing a single developer tool.
 class ToolCard extends StatelessWidget {
   const ToolCard({
     super.key,
@@ -92,7 +92,6 @@ class _CardBodyState extends State<_CardBody>
             clipBehavior: Clip.antiAlias,
             child: Stack(
               children: [
-                // ── Accent gradient strip ──
                 Positioned(
                   top: 0,
                   left: 0,

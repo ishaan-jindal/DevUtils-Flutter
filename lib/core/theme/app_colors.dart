@@ -10,14 +10,14 @@ class AppColors {
   // ── Accent Gradients ──
   static const LinearGradient primaryGradient = LinearGradient(
     colors: [Color(0xFF00BCD4), Color(0xFF00897B)],
-    begin: Alignment.topLeft,
-    end: Alignment.bottomRight,
+    begin: .topLeft,
+    end: .bottomRight,
   );
 
   static const LinearGradient surfaceGradient = LinearGradient(
     colors: [Color(0xFF1A1A2E), Color(0xFF16213E)],
-    begin: Alignment.topCenter,
-    end: Alignment.bottomCenter,
+    begin: .topCenter,
+    end: .bottomCenter,
   );
 
   // ── Tool Accent Colors ──

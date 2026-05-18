@@ -13,7 +13,7 @@ class AppTheme {
         dynamicScheme ??
         ColorScheme.fromSeed(
           seedColor: AppColors.seedColor,
-          brightness: Brightness.light,
+          brightness: .light,
         );
 
     return _buildTheme(colorScheme);
@@ -23,10 +23,7 @@ class AppTheme {
   static ThemeData dark({ColorScheme? dynamicScheme}) {
     final colorScheme =
         dynamicScheme ??
-        ColorScheme.fromSeed(
-          seedColor: AppColors.seedColor,
-          brightness: Brightness.dark,
-        );
+        ColorScheme.fromSeed(seedColor: AppColors.seedColor, brightness: .dark);
 
     return _buildTheme(colorScheme);
   }
@@ -52,7 +49,7 @@ class AppTheme {
         foregroundColor: colorScheme.onSurface,
         titleTextStyle: textTheme.titleLarge?.copyWith(
           color: colorScheme.onSurface,
-          fontWeight: FontWeight.w600,
+          fontWeight: .w600,
         ),
       ),
 
@@ -73,57 +70,50 @@ class AppTheme {
         filled: true,
         fillColor: colorScheme.surfaceContainerHighest.withValues(alpha: 0.4),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
-          borderSide: BorderSide.none,
+          borderRadius: .circular(12),
+          borderSide: .none,
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: .circular(12),
           borderSide: BorderSide(
             color: colorScheme.outlineVariant.withValues(alpha: 0.5),
           ),
         ),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: .circular(12),
           borderSide: BorderSide(color: colorScheme.primary, width: 1.5),
         ),
         errorBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(12),
+          borderRadius: .circular(12),
           borderSide: BorderSide(color: colorScheme.error),
         ),
-        contentPadding: const EdgeInsets.symmetric(
-          horizontal: 16,
-          vertical: 14,
-        ),
+        contentPadding: const .symmetric(horizontal: 16, vertical: 14),
       ),
 
       // ── Filled Buttons ──
       filledButtonTheme: FilledButtonThemeData(
         style: FilledButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 14),
+          shape: RoundedRectangleBorder(borderRadius: .circular(12)),
+          padding: const .symmetric(horizontal: 24, vertical: 14),
         ),
       ),
 
       // ── Icon Buttons ──
       iconButtonTheme: IconButtonThemeData(
         style: IconButton.styleFrom(
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(12),
-          ),
+          shape: RoundedRectangleBorder(borderRadius: .circular(12)),
         ),
       ),
 
       // ── Chips ──
       chipTheme: ChipThemeData(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10)),
+        shape: RoundedRectangleBorder(borderRadius: .circular(10)),
       ),
 
       // ── Snackbar ──
       snackBarTheme: SnackBarThemeData(
-        behavior: SnackBarBehavior.floating,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+        behavior: .floating,
+        shape: RoundedRectangleBorder(borderRadius: .circular(12)),
       ),
 
       // ── Divider ──

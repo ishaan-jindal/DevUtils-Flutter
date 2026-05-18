@@ -4,7 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/home/pages/home_page.dart';
 import '../../features/json_formatter/pages/json_formatter_page.dart';
 
-/// App-wide router configuration using go_router.
+/// App-wide router configuration
 class AppRouter {
   AppRouter._();
 

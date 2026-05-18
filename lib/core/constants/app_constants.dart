@@ -4,7 +4,7 @@ class AppConstants {
 
   // ── App Info ──
   static const String appName = 'DevUtils';
-  static const String appVersion = '1.0.0';
+  static const String appVersion = '0.1.0';
   static const String appDescription =
       'A clean, fast, offline-first developer utility toolbox.';
 

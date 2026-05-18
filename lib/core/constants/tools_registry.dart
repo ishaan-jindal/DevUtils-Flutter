@@ -8,7 +8,6 @@ class ToolsRegistry {
   ToolsRegistry._();
 
   static const List<ToolModel> tools = [
-    // ── Phase 1 ──
     ToolModel(
       id: 'json_formatter',
       name: 'JSON Formatter',

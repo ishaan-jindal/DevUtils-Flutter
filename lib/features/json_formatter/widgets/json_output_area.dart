@@ -175,7 +175,6 @@ class JsonOutputArea extends StatelessWidget {
   /// Syntax highlight JSON text.
   TextSpan _highlightJson(String json, bool isDark) {
     final spans = <TextSpan>[];
-    final runes = json.runes.toList();
     int i = 0;
 
     Color keyColor = isDark ? AppColors.syntaxKey : AppColors.syntaxKeyLight;
@@ -262,8 +261,9 @@ class JsonOutputArea extends StatelessWidget {
           if ((json[i] == '-' || json[i] == '+') &&
               i > start + 1 &&
               json[i - 1] != 'e' &&
-              json[i - 1] != 'E')
+              json[i - 1] != 'E') {
             break;
+          }
           i++;
         }
         spans.add(

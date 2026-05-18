@@ -8,7 +8,6 @@ import '../../../core/theme/theme_cubit.dart';
 import '../widgets/tool_card.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-/// Home page displaying a searchable grid of developer tools.
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
 
