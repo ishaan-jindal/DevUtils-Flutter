@@ -10,11 +10,11 @@ DevUtils provides commonly used developer tools in a fast, modern, and offline-f
 
 ## Current Tools
 - JSON Formatter & Validator
+- Timestamp Converter
+- JWT Decoder
 
 ## Planned
-- JWT Decoder
 - Regex Tester
-- Timestamp Converter
 - Base64 Encoder/Decoder
 - URL Encoder/Decoder
 - Hash Generator
