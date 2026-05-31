@@ -192,18 +192,12 @@ class _HomePageState extends State<HomePage> {
   Widget _buildTitle(ThemeData theme) {
     return Row(
       children: [
-        Container(
-          padding: const EdgeInsets.all(8),
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              colors: [theme.colorScheme.primary, theme.colorScheme.tertiary],
-            ),
-            borderRadius: BorderRadius.circular(12),
-          ),
-          child: const Icon(
-            Icons.developer_mode_rounded,
-            color: Colors.white,
-            size: 22,
+        ClipRRect(
+          borderRadius: BorderRadius.circular(10),
+          child: Image.asset(
+            'assets/app_icon.png',
+            width: 36,
+            height: 36,
           ),
         ),
         const SizedBox(width: 12),
