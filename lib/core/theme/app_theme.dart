@@ -9,22 +9,21 @@ class AppTheme {
   AppTheme._();
 
   // ── Light Theme ──
-  static ThemeData light({ColorScheme? dynamicScheme}) {
-    final colorScheme =
-        dynamicScheme ??
-        ColorScheme.fromSeed(
-          seedColor: AppColors.seedColor,
-          brightness: .light,
-        );
+  static ThemeData light() {
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: AppColors.seedColor,
+      brightness: Brightness.light,
+    );
 
     return _buildTheme(colorScheme);
   }
 
   // ── Dark Theme ──
-  static ThemeData dark({ColorScheme? dynamicScheme}) {
-    final colorScheme =
-        dynamicScheme ??
-        ColorScheme.fromSeed(seedColor: AppColors.seedColor, brightness: .dark);
+  static ThemeData dark() {
+    final colorScheme = ColorScheme.fromSeed(
+      seedColor: AppColors.seedColor,
+      brightness: Brightness.dark,
+    );
 
     return _buildTheme(colorScheme);
   }

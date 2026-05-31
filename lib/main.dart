@@ -1,4 +1,3 @@
-import 'package:dynamic_color/dynamic_color.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -22,17 +21,13 @@ class DevUtilsApp extends StatelessWidget {
       create: (_) => ThemeCubit(),
       child: BlocBuilder<ThemeCubit, ThemeMode>(
         builder: (context, themeMode) {
-          return DynamicColorBuilder(
-            builder: (lightDynamic, darkDynamic) {
-              return MaterialApp.router(
-                title: 'DevUtils',
-                debugShowCheckedModeBanner: false,
-                themeMode: themeMode,
-                theme: AppTheme.light(dynamicScheme: lightDynamic),
-                darkTheme: AppTheme.dark(dynamicScheme: darkDynamic),
-                routerConfig: AppRouter.router,
-              );
-            },
+          return MaterialApp.router(
+            title: 'DevUtils',
+            debugShowCheckedModeBanner: false,
+            themeMode: themeMode,
+            theme: AppTheme.light(),
+            darkTheme: AppTheme.dark(),
+            routerConfig: AppRouter.router,
           );
         },
       ),
