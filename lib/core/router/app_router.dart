@@ -1,3 +1,4 @@
+import 'package:dev_utils/features/api_tester/pages/api_tester_page.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 
@@ -36,6 +37,11 @@ class AppRouter {
         path: '/jwt-decoder',
         name: 'jwt-decoder',
         builder: (context, state) => const JwtDecoderPage(),
+      ),
+      GoRoute(
+        path: '/api-tester',
+        name: 'api-tester',
+        builder: (context, state) => const ApiTesterPage(),
       ),
       // ── Future tool routes ──
       // GoRoute(path: '/regex-tester', ...),

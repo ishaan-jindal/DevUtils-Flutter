@@ -39,6 +39,16 @@ class ToolsRegistry {
       isNew: true,
     ),
     ToolModel(
+      id: 'api_tester',
+      name: 'API Tester',
+      description: 'Send HTTP requests & inspect responses',
+      icon: Icons.api_rounded,
+      accentColor: AppColors.apiTester,
+      routePath: '/api-tester',
+      category: ToolCategory.testers,
+      isNew: true,
+    ),
+    ToolModel(
       id: 'regex_tester',
       name: 'Regex Tester',
       description: 'Live matching & explanations',
