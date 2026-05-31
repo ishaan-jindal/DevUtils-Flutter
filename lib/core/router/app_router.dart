@@ -4,6 +4,7 @@ import 'package:go_router/go_router.dart';
 import '../../features/home/pages/home_page.dart';
 import '../../features/json_formatter/pages/json_formatter_page.dart';
 import '../../features/timestamp_converter/pages/timestamp_converter_page.dart';
+import '../../features/jwt_decoder/pages/jwt_decoder_page.dart';
 
 /// App-wide router configuration
 class AppRouter {
@@ -31,8 +32,12 @@ class AppRouter {
         name: 'timestamp_converter',
         builder: (context, state) => const TimestampConverterPage(),
       ),
+      GoRoute(
+        path: '/jwt-decoder',
+        name: 'jwt-decoder',
+        builder: (context, state) => const JwtDecoderPage(),
+      ),
       // ── Future tool routes ──
-      // GoRoute(path: '/jwt-decoder', ...),
       // GoRoute(path: '/regex-tester', ...),
       // GoRoute(path: '/base64-tools', ...),
       // GoRoute(path: '/url-encoder', ...),

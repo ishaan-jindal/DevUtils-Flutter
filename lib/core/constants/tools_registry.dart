@@ -36,7 +36,7 @@ class ToolsRegistry {
       accentColor: AppColors.jwtDecoder,
       routePath: '/jwt-decoder',
       category: ToolCategory.encoders,
-      isComingSoon: true,
+      isNew: true,
     ),
     ToolModel(
       id: 'regex_tester',
