@@ -12,6 +12,7 @@ DevUtils provides commonly used developer tools in a fast, modern, and offline-f
 - JSON Formatter & Validator
 - Timestamp Converter
 - JWT Decoder
+- API Tester
 
 ## Planned
 - Regex Tester
@@ -19,7 +20,6 @@ DevUtils provides commonly used developer tools in a fast, modern, and offline-f
 - URL Encoder/Decoder
 - Hash Generator
 - Color Converter
-- API Tester
 - Diff Checker
 - SQL Formatter
 - Markdown Preview
