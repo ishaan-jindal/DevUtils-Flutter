@@ -40,7 +40,7 @@ class _JwtDecoderPageState extends State<JwtDecoderPage> {
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: const Icon(
-                  Icons.security_rounded,
+                  Icons.token_rounded,
                   size: 18,
                   color: AppColors.jwtDecoder,
                 ),
@@ -52,51 +52,60 @@ class _JwtDecoderPageState extends State<JwtDecoderPage> {
         ),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(AppConstants.spacingMd),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              JwtInputArea(controller: _inputController),
+          child: Center(
+            child: ConstrainedBox(
+              constraints: const BoxConstraints(maxWidth: 1200),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  JwtInputArea(controller: _inputController),
 
-              const SizedBox(height: AppConstants.spacingLg),
+                  const SizedBox(height: AppConstants.spacingLg),
 
-              BlocBuilder<JwtDecoderBloc, JwtDecoderState>(
-                builder: (context, state) {
-                  if (state.headerFormatted == null ||
-                      state.payloadFormatted == null) {
-                    return Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(AppConstants.spacingXxl),
-                        child: Text(
-                          'Enter a valid JWT to view decoded payload',
-                          style: Theme.of(context).textTheme.bodyLarge
-                              ?.copyWith(
-                                color: Theme.of(
-                                  context,
-                                ).colorScheme.onSurface.withValues(alpha: 0.5),
-                              ),
-                        ),
-                      ),
-                    );
-                  }
+                  BlocBuilder<JwtDecoderBloc, JwtDecoderState>(
+                    builder: (context, state) {
+                      if (state.headerFormatted == null ||
+                          state.payloadFormatted == null) {
+                        return Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(
+                              AppConstants.spacingXxl,
+                            ),
+                            child: Text(
+                              'Enter a valid JWT to view decoded payload',
+                              textAlign: TextAlign.center,
+                              style: Theme.of(context).textTheme.bodyLarge
+                                  ?.copyWith(
+                                    color: Theme.of(context)
+                                        .colorScheme
+                                        .onSurface
+                                        .withValues(alpha: 0.5),
+                                  ),
+                            ),
+                          ),
+                        );
+                      }
 
-                  return Column(
-                    children: [
-                      JwtOutputCard(
-                        title: 'HEADER (Algorithm & Token Type)',
-                        content: state.headerFormatted!,
-                        headerColor: Colors.redAccent,
-                      ),
-                      const SizedBox(height: AppConstants.spacingMd),
-                      JwtOutputCard(
-                        title: 'PAYLOAD (Data)',
-                        content: state.payloadFormatted!,
-                        headerColor: Colors.purpleAccent,
-                      ),
-                    ],
-                  );
-                },
+                      return Column(
+                        children: [
+                          JwtOutputCard(
+                            title: 'HEADER (Algorithm & Token Type)',
+                            content: state.headerFormatted!,
+                            headerColor: Colors.redAccent,
+                          ),
+                          const SizedBox(height: AppConstants.spacingMd),
+                          JwtOutputCard(
+                            title: 'PAYLOAD (Data)',
+                            content: state.payloadFormatted!,
+                            headerColor: Colors.purpleAccent,
+                          ),
+                        ],
+                      );
+                    },
+                  ),
+                ],
               ),
-            ],
+            ),
           ),
         ),
       ),

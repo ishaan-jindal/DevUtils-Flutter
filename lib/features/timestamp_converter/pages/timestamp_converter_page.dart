@@ -67,82 +67,92 @@ class _TimestampConverterPageState extends State<TimestampConverterPage> {
 
             return SingleChildScrollView(
               padding: const EdgeInsets.all(AppConstants.spacingMd),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  TimestampToolbar(inputController: _inputController),
+              child: Center(
+                child: ConstrainedBox(
+                  constraints: const BoxConstraints(maxWidth: 1200),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.stretch,
+                    children: [
+                      TimestampToolbar(inputController: _inputController),
 
-                  const SizedBox(height: AppConstants.spacingLg),
+                      const SizedBox(height: AppConstants.spacingLg),
 
-                  TextField(
-                    controller: _inputController,
-                    keyboardType: TextInputType.number,
-                    style: const TextStyle(
-                      fontFamily: 'monospace',
-                      fontSize: 16,
-                    ),
-                    decoration: InputDecoration(
-                      labelText: 'Unix Timestamp',
-                      hintText: state.isMilliseconds
-                          ? 'e.g. 1672531200000'
-                          : 'e.g. 1672531200',
-                      errorText: state.error,
-                      prefixIcon: const Icon(Icons.tag_rounded),
-                    ),
-                    onChanged: (val) {
-                      context.read<TimestampConverterBloc>().add(
-                        TimestampInputChanged(val),
-                      );
-                    },
-                  ),
-
-                  const SizedBox(height: AppConstants.spacingLg),
-
-                  if (state.dateTime != null) ...[
-                    Text(
-                      'Results',
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.bold,
+                      TextField(
+                        controller: _inputController,
+                        keyboardType: TextInputType.number,
+                        style: const TextStyle(
+                          fontFamily: 'monospace',
+                          fontSize: 16,
+                        ),
+                        decoration: InputDecoration(
+                          labelText: 'Unix Timestamp',
+                          hintText: state.isMilliseconds
+                              ? 'e.g. 1672531200000'
+                              : 'e.g. 1672531200',
+                          errorText: state.error,
+                          prefixIcon: const Icon(Icons.tag_rounded),
+                        ),
+                        onChanged: (val) {
+                          context.read<TimestampConverterBloc>().add(
+                            TimestampInputChanged(val),
+                          );
+                        },
                       ),
-                    ),
-                    const SizedBox(height: AppConstants.spacingMd),
-                    TimestampResultCard(
-                      label: 'Local Time',
-                      value: _service.formatDateTime(state.dateTime!),
-                      subtext: state.dateTime!.timeZoneName,
-                    ),
-                    const SizedBox(height: AppConstants.spacingSm),
-                    TimestampResultCard(
-                      label: 'UTC Time',
-                      value: _service.formatDateTime(state.dateTime!.toUtc()),
-                      subtext: 'UTC',
-                    ),
-                    const SizedBox(height: AppConstants.spacingSm),
-                    TimestampResultCard(
-                      label: 'ISO 8601',
-                      value: state.dateTime!.toUtc().toIso8601String(),
-                    ),
-                    const SizedBox(height: AppConstants.spacingSm),
-                    TimestampResultCard(
-                      label: 'Relative',
-                      value: _service.getRelativeTime(state.dateTime!),
-                    ),
-                  ] else if (state.input.isEmpty) ...[
-                    Center(
-                      child: Padding(
-                        padding: const EdgeInsets.all(AppConstants.spacingXxl),
-                        child: Text(
-                          'Enter a timestamp or click "Now"',
-                          style: theme.textTheme.bodyLarge?.copyWith(
-                            color: theme.colorScheme.onSurface.withValues(
-                              alpha: 0.5,
+
+                      const SizedBox(height: AppConstants.spacingLg),
+
+                      if (state.dateTime != null) ...[
+                        Text(
+                          'Results',
+                          style: theme.textTheme.titleMedium?.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                        const SizedBox(height: AppConstants.spacingMd),
+                        TimestampResultCard(
+                          label: 'Local Time',
+                          value: _service.formatDateTime(state.dateTime!),
+                          subtext: state.dateTime!.timeZoneName,
+                        ),
+                        const SizedBox(height: AppConstants.spacingSm),
+                        TimestampResultCard(
+                          label: 'UTC Time',
+                          value: _service.formatDateTime(
+                            state.dateTime!.toUtc(),
+                          ),
+                          subtext: 'UTC',
+                        ),
+                        const SizedBox(height: AppConstants.spacingSm),
+                        TimestampResultCard(
+                          label: 'ISO 8601',
+                          value: state.dateTime!.toUtc().toIso8601String(),
+                        ),
+                        const SizedBox(height: AppConstants.spacingSm),
+                        TimestampResultCard(
+                          label: 'Relative',
+                          value: _service.getRelativeTime(state.dateTime!),
+                        ),
+                      ] else if (state.input.isEmpty) ...[
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.all(
+                              AppConstants.spacingXxl,
+                            ),
+                            child: Text(
+                              'Enter a timestamp or click "Now"',
+                              textAlign: TextAlign.center,
+                              style: theme.textTheme.bodyLarge?.copyWith(
+                                color: theme.colorScheme.onSurface.withValues(
+                                  alpha: 0.5,
+                                ),
+                              ),
                             ),
                           ),
                         ),
-                      ),
-                    ),
-                  ],
-                ],
+                      ],
+                    ],
+                  ),
+                ),
               ),
             );
           },
