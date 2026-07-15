@@ -194,11 +194,7 @@ class _HomePageState extends State<HomePage> {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(10),
-          child: Image.asset(
-            'assets/app_icon.png',
-            width: 36,
-            height: 36,
-          ),
+          child: Image.asset('assets/app_icon.png', width: 36, height: 36),
         ),
         const SizedBox(width: 12),
         Text(

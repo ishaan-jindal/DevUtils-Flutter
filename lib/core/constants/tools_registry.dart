@@ -66,7 +66,7 @@ class ToolsRegistry {
       accentColor: AppColors.base64Tools,
       routePath: '/base64-tools',
       category: ToolCategory.encoders,
-      isComingSoon: true,
+      isNew: true,
     ),
     ToolModel(
       id: 'url_encoder',

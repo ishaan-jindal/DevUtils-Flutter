@@ -43,9 +43,13 @@ class AppRouter {
         name: 'api-tester',
         builder: (context, state) => const ApiTesterPage(),
       ),
+      // GoRoute(
+      //   path: '/base64-tools',
+      //   name: 'base64_tools',
+      //   builder: (context, state) => const Base64ToolsPage(),
+      // ),
       // ── Future tool routes ──
       // GoRoute(path: '/regex-tester', ...),
-      // GoRoute(path: '/base64-tools', ...),
       // GoRoute(path: '/url-encoder', ...),
       // GoRoute(path: '/hash-generator', ...),
       // GoRoute(path: '/color-tools', ...),
